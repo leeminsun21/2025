@@ -3,12 +3,12 @@ import streamlit as st
 # 🎤 오늘의 기분별 인디 노래 추천 리스트 (임의의 예시니까 dlals가 직접 채워야 하는 부분임! 개성 살리기 쌉가능)
 # 유튜브 링크도 YOUR_VIDEO_ID_HERE 부분을 실제 유튜브 영상 ID로 바꾸면 됨!
 mood_based_song_recommendations = {
-    "신남": [
-        {"title": "혁오 - Gang Gang Schiele", "artist": "혁오", "link": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1"},
-        {"title": "장기하와 얼굴들 - 풍문으로 들었소", "artist": "장기하와 얼굴들", "link": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2"},
-        {"title": "잔나비 - She", "artist": "잔나비", "link": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3"}
+    "신나고 싶음": [
+        {"title": "혁오 - 위잉위잉", "artist": "혁오", "link": "https://m.youtube.com/watch?v=GIa80KLuDwc"},
+        {"title": "보이넥스트도어 - Fadeaway", "artist": "보이넥스트도어", "link": "https://www.youtube.com/watch?v=AL5SkIfr26A"},
+        {"title": "방탄소년단 - 진격의 방탄", "artist": "방탄소년", "link": "https://www.youtube.com/watch?v=7RsFNXsvusw"}
     ],
-    "잔잔함": [
+    "잔잔해지고 싶음": [
         {"title": "옥상달빛 - 수고했어 오늘도", "artist": "옥상달빛", "link": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_4"},
         {"title": "어쿠스틱 콜라보 - 그대와 나 설레임", "artist": "어쿠스틱 콜라보", "link": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_5"},
         {"title": "볼빨간사춘기 - 여행", "artist": "볼빨간사춘기", "link": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_6"} # 볼빨간도 인디는 아니지만, 잔잔하니 좋으니 넣어봄 ㅋㅋㅋ
@@ -42,13 +42,13 @@ def get_song_recommendation_by_mood(mood):
 
 # Streamlit 앱 설정
 st.set_page_config(
-    page_title="🎧 오늘의 기분별 인디 노래 추천 리스트",
+    page_title="🎧 기분별 인디 노래 추천 리스트",
     page_icon="🎶",
     layout="centered",
     initial_sidebar_state="auto"
 )
 
-st.title("🎧 오늘의 기분별 인디 노래 추천 리스트")
+st.title("🎧 기분별 인디 노래 추천 리스트")
 st.markdown("---") # 구분선
 
 st.subheader("😊 지금 어떤 기분이신가요?")
