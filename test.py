@@ -6,7 +6,7 @@ mood_based_song_recommendations = {
     "신나고 싶음": [
         {"title": "혁오 - 위잉위잉", "artist": "혁오", "link": "https://m.youtube.com/watch?v=GIa80KLuDwc"},
         {"title": "보이넥스트도어 - Fadeaway", "artist": "보이넥스트도어", "link": "https://www.youtube.com/watch?v=AL5SkIfr26A"},
-        {"title": "방탄소년단 - 진격의 방탄", "artist": "방탄소년", "link": "https://www.youtube.com/watch?v=7RsFNXsvusw"}
+        {"title": "방탄소년단 - 진격의 방탄", "artist": "방탄소년단", "link": "https://www.youtube.com/watch?v=7RsFNXsvusw"}
     ],
     "잔잔해지고 싶음": [
         {"title": "옥상달빛 - 수고했어 오늘도", "artist": "옥상달빛", "link": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_4"},
