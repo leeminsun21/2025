@@ -42,13 +42,13 @@ def get_song_recommendation_by_mood(mood):
 
 # Streamlit 앱 설정
 st.set_page_config(
-    page_title="🎧 기분별 인디 노래 추천 리스트",
+    page_title="🎧 기분별 노래 추천 리스트",
     page_icon="🎶",
     layout="centered",
     initial_sidebar_state="auto"
 )
 
-st.title("🎧 기분별 인디 노래 추천 리스트")
+st.title("🎧 기분별 노래 추천 리스트")
 st.markdown("---") # 구분선
 
 st.subheader("😊 지금 어떤 기분이신가요?")
