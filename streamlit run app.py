@@ -30,7 +30,7 @@ def recommend_song(mood):
         '청춘': [ 
             {"title": "여행", "artist": "볼빨간사춘기", "youtube_link": "https://youtu.be/A9M_W8LwN0E?si=9o4T-P9xYl8kQ-T7"},
             {"title": "한 페이지가 될 수 있게", "artist": "DAY6", "youtube_link": "https://youtu.be/WjO1m4l_e24?si=Rj3kGZ_v1K2K8qPz"},
-            {"title": "Lucky Charm", "artist": "보이넥스트도어", "youtube_link": "https://www.youtube.com/watch?v=MFL9_Y0-U_s"} # <<< '벚꽃 엔딩' 대신 'Lucky Charm' 추가!
+            {"title": "Lucky Charm", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/deC7LUb6ls4?si=FjKqrtUIKMW3NKpY"}
         ]
     }
     return mood_songs.get(mood, [])
