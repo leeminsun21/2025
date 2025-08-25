@@ -27,7 +27,7 @@ def recommend_song(mood):
             {"title": "돌멩이", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/r-ODioF6rZc?si=jYgq2RQivuk_V0Ib"},
             {"title": "선물", "artist": "멜로망스", "youtube_link": "https://youtu.be/I9j4N6o16A8?si=fL5H-P4Kk6Qe0fFf"}
         ],
-        '청춘': [ # <<< '여행'에서 '청춘'으로 이름 변경!
+        '청춘': [ 
             {"title": "여행", "artist": "볼빨간사춘기", "youtube_link": "https://youtu.be/A9M_W8LwN0E?si=9o4T-P9xYl8kQ-T7"},
             {"title": "한 페이지가 될 수 있게", "artist": "DAY6", "youtube_link": "https://youtu.be/WjO1m4l_e24?si=Rj3kGZ_v1K2K8qPz"},
             {"title": "Lucky Charm", "artist": "보이넥스트도어", "youtube_link": "https://www.youtube.com/watch?v=MFL9_Y0-U_s"} # <<< '벚꽃 엔딩' 대신 'Lucky Charm' 추가!
