@@ -1,87 +1,61 @@
 import streamlit as st
-import random # 노래 여러 개 추천할 때 쓰려고!
 
-# 웹 앱 기본 설정
+def recommend_song(mood):
+    # mood_songs에 youtube_link 키 추가했어!
+    # dlals가 원하는 유튜브 링크로 바꿔주면 돼! (플레이리스트도 괜찮!)
+    mood_songs = {
+        '행복함': [
+            {"title": "Happy", "artist": "Pharrell Williams", "youtube_link": "https://www.youtube.com/watch?v=y6Sxv-sUYtM"},
+            {"title": "Sugar", "artist": "Maroon 5", "youtube_link": "https://www.youtube.com/watch?v=09R8_2nJhr4"}
+        ],
+        '슬픔': [
+            {"title": "Someone Like You", "artist": "Adele", "youtube_link": "https://www.youtube.com/watch?v=hLQsP2N_g30"},
+            {"title": "Stay With Me", "artist": "Sam Smith", "youtube_link": "https://www.youtube.com/watch?v=pB-5XG-DbCs"}
+        ],
+        '차분함': [
+            {"title": "밤편지", "artist": "아이유", "youtube_link": "https://www.youtube.com/watch?v=F0z-9yq3qL8"},
+            {"title": "늦은 밤 너의 집 앞 골목길에서", "artist": "노을", "youtube_link": "https://www.youtube.com/watch?v=0pL92v1m7D8"}
+        ],
+        '신남': [
+            {"title": "Dynamite", "artist": "BTS", "youtube_link": "https://www.youtube.com/watch?v=gdZLi9oWNZg"},
+            {"title": "DDU-DU DDU-DU", "artist": "BLACKPINK", "youtube_link": "https://www.youtube.com/watch?v=IHNzOHi8sJs"}
+        ],
+        '에너지 충전': [
+            {"title": "Don't Stop Me Now", "artist": "Queen", "youtube_link": "https://www.youtube.com/watch?v=HgzGwKwLmgM"},
+            {"title": "Dancing Queen", "artist": "ABBA", "youtube_link": "https://www.youtube.com/watch?v=xFrGuyw1V8s"}
+        ]
+    }
+    return mood_songs.get(mood, [])
+
+
+# 페이지 설정 (요건 똑같아!)
 st.set_page_config(
-    page_title="내 기분에 딱 맞는 노래 ✨", # 웹페이지 제목
-    page_icon="EMOJI_2", # 브라우저 탭 아이콘
-    layout="centered" # 페이지 중앙 정렬
+    page_title="분위기별 노래 추천 웹 앱🎶",
+    page_icon="🎶"
 )
 
-st.title("오늘 내 분위기에 딱 맞는 노래 추천!") # 앱의 메인 제목
-st.markdown("---") # 구분선
+# 웹 앱 메인 제목
+st.title("🎶 분위기별 노래 추천 웹 앱 🎶")
+st.write("오늘 어떤 분위기인지 알려주면 부힛이 찰떡같은 노래 추천해줄게!")
 
-# --- 기분 선택 옵션 정의 ---
-# dlals이 요청한 '평온' 대신 '잔잔'으로 변경된 상태
-mood_options = ["신남", "잔잔", "우울", "나른", "짜증", "생각 많음"]
-selected_mood = st.selectbox("오늘 기분이 어때?", mood_options)
+# 분위기 선택 옵션
+mood_options = ['선택해주세요', '행복함', '슬픔', '차분함', '신남', '에너지 충전']
+selected_mood = st.selectbox("오늘의 분위기는?", mood_options)
 
-# --- 기분별 노래 추천 리스트 (유튜브 링크 포함) ---
-# 각 노래는 'title'과 'youtube_url'을 가진 딕셔너리 형태로 저장
-songs_by_mood = {
-    # dlals이 추천한 '신남' 노래들만 포함!
-    "신남": [
-        {"title": "BTS (방탄소년단) - 진격의 방탄소년단", "youtube_url": "https://youtu.be/p6a2dM_MnyY"},
-        {"title": "BOYNEXTDOOR (보이넥스트도어) - Feelin' Lucky (운수 좋은 날)", "youtube_url": "https://youtu.be/5dJ7d38zQUs"},
-        {"title": "세븐틴 (SEVENTEEN) - 아주 NICE", "youtube_url": "https://youtu.be/OwN8jP0F_d4"},
-        {"title": "DAY6 (데이식스) - 녹아내려요", "youtube_url": "https://youtu.be/lP2M_vC51tI"},
-        {"title": "워너원 (Wanna One) - 에너제틱 (Energetic)", "youtube_url": "https://youtu.be/p0dF3m4Eawc"}
-    ],
-    # dlals이 추천한 '잔잔' 노래들만 포함!
-    "잔잔": [
-        {"title": "아이유 - 밤편지", "youtube_url": "https://youtu.be/BzYnjpgEDbY"},
-        {"title": "폴킴 - 모든 날, 모든 순간", "youtube_url": "https://youtu.be/23uNqgR3Lkw"},
-        {"title": "이하이 - For You", "youtube_url": "https://youtu.be/M_q628rE418"},
-        {"title": "이하이 (with B.I) - 머리어깨무릎", "youtube_url": "https://youtu.be/mF8xHh5y1b4"}, # (with B.I) 붙여놨어!
-        {"title": "이문세 - 소녀", "youtube_url": "https://youtu.be/lVvJ2uW8C6g"}
-    ],
-    # dlals이 추천한 '우울' 노래들만 포함!
-    "우울": [
-        {"title": "이하이 - 한숨", "youtube_url": "https://youtu.be/v-Y9v7VzOAY"},
-        {"title": "줍에이 - 혼자여도 괜찮아", "youtube_url": "https://youtu.be/yW133S5rU1g"},
-        {"title": "선우정아 - 도망가자", "youtube_url": "https://youtu.be/g3hW236JtHk"},
-        {"title": "볼빨간사춘기 - 나의 사춘기에게", "youtube_url": "https://youtu.be/lM5_z0i9MGE"},
-        {"title": "최유리 - 숲", "youtube_url": "https://youtu.be/wXo9B6m_n-I"}
-    ],
-    # 나른, 짜증, 생각 많음은 예시 노래들이 그대로 유지됨
-    "나른": [
-        {"title": "CHEESE (치즈) - Madeleine Love", "youtube_url": "https://youtu.be/E-Yp_tA22_A"},
-        {"title": "DEAN - D (Half Moon)", "youtube_url": "https://youtu.be/jJ4k7N3sH64"},
-        {"title": "백예린 - Square (2017)", "youtube_url": "https://youtu.be/u3W2E65IysY"},
-        {"title": "윤하 - 오르트구름", "youtube_url": "https://youtu.be/s0aM7x7j7wU"}
-    ],
-    "짜증": [
-        {"title": "NCT DREAM - Hot Sauce", "youtube_url": "https://youtu.be/f-fglM-c4Hw"},
-        {"title": "ITZY - DALLA DALLA (달라달라)", "youtube_url": "https://youtu.be/pNfTK39k55U"},
-        {"title": "블랙핑크 - DDU-DU DDU-DU (뚜두뚜두)", "youtube_url": "https://youtu.be/IHNzOHi8sJs"},
-        {"title": "ATEEZ(에이티즈) - HALAZIA", "youtube_url": "https://youtu.be/F4d_hWlqC4c"}
-    ],
-    "생각 많음": [
-        {"title": "김광석 - 서른 즈음에", "youtube_url": "https://youtu.be/qQ7g8xM8lVw"},
-        {"title": "혁오 (HYUKOH) - TOMBOY", "youtube_url": "https://youtu.be/Qy-f06bYnJ4"},
-        {"title": "에피톤 프로젝트 - 새는", "youtube_url": "https://youtu.be/n0N1N9R6iQ8"},
-        {"title": "장기하와 얼굴들 - 풍문으로 들었소", "youtube_url": "https://youtu.be/1YJ4q3B3l3k"}
-    ]
-}
+# 유저가 분위기를 선택했을 때만 노래 추천 보여주기
+if selected_mood != '선택해주세요':
+    st.subheader(f"✨ {selected_mood} 분위기에 찰떡인 노래들! ✨")
+    recommended_songs = recommend_song(selected_mood)
 
-# --- 노래 추천 실행 버튼 ---
-if st.button("오늘의 노래 추천받기"):
-    # 선택된 기분이 songs_by_mood 딕셔너리에 있는지 확인
-    if selected_mood in songs_by_mood:
-        # 해당 기분에 맞는 노래 리스트에서 랜덤으로 한 곡 선택
-        recommended_song = random.choice(songs_by_mood[selected_mood])
-
-        # --- 추천 결과 출력 ---
-        st.success(f"### ✨ **{selected_mood}** 기분에 딱 맞는 노래는...")
-        st.info(f"## EMOJI_18 `{recommended_song['title']}` EMOJI_19") # 노래 제목 표시
-        
-        # 유튜브 링크 버튼 생성
-        st.link_button("YouTube에서 듣기", recommended_song['youtube_url'])
-        
-        st.markdown("이 노래로 기분 전환 (혹은 기분 몰입) 해보는 건 어때?")
+    if recommended_songs:
+        for song in recommended_songs:
+            # HTML 마크다운으로 유튜브 링크를 클릭 가능한 형태로 보여주기!
+            # target='_blank' 이걸 넣어주면 새 탭으로 열려!
+            st.markdown(f"- <a href='{song['youtube_link']}' target='_blank'><b>{song['title']}</b> by {song['artist']} (🎵 유튜브에서 듣기)</a>", unsafe_allow_html=True)
     else:
-        # 만약 선택된 기분에 해당하는 노래 데이터가 없으면 경고 메시지 출력
-        st.warning("선택된 기분에 대한 노래 데이터가 아직 없어! 다른 기분을 골라볼까?")
+        st.write("아직 이 분위기에는 추천 곡이 없네 ㅠㅠ 다른 분위기를 선택해볼까?")
+else:
+    st.write("👆 위에서 분위기를 선택하면 노래가 짜잔~ 나타날 거야!")
 
-st.markdown("---") # 하단 구분선
-st.caption("powered by 부힛 EMOJI_20") # 풋터
+st.markdown("---")
+st.write("더 많은 기능 추가하고 싶으면 언제든지 물어봐, dlals! 같이 만들어보자 😉")
