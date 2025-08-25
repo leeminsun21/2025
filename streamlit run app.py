@@ -6,20 +6,18 @@ def recommend_song(mood):
         '신남': [
             {"title": "진격의 방탄소년단", "artist": "방탄소년단", "youtube_link": "https://youtu.be/7RsFNXsvusw?si=6ouFa2WMrn7CKdBS"},
             {"title": "페더웨이", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/I6StVU3kABM?si=cPHdDdNcVKb1PxR_"},
-            {"title": "아주 나이스", "artist": "세븐틴", "youtube_link": "https://youtu.be/pOA-XQsEG44?si=ZoIR7LP1Rsr2pQ2G"},
-            {"title": "Super Shy", "artist": "NewJeans", "youtube_link": "https://youtu.be/k8yvl4911g8?si=lTskrX9B2Gz36x5K"}
+            {"title": "아주 나이스", "artist": "세븐틴", "youtube_link": "https://youtu.be/pOA-XQsEG44?si=ZoIR7LP1Rsr2pQ2G"}
         ],
         '잔잔한': [
             {"title": "돌고래", "artist": "Zion.T", "youtube_link": "https://youtu.be/O_XpD41tXjE?si=xXlyrluioLgoWWxT"},
             {"title": "for you", "artist": "이하이", "youtube_link": "https://youtu.be/fB3kTcfjybg?si=OUfsGcS_-Uzbvy8G"},
             {"title": "next mistake", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/PiaK5sgQSJM?si=1_D_qo7TFX8ibzqc"},
-            {"title": "어떻게 이별까지 사랑하겠어, 널 사랑하는 거지", "artist": "악동뮤지션", "youtube_link": "https://youtu.be/RKUvG_bE_B8?si=YxR1V2vR2_n24p7I"}
+            {"title": "어떻게 이별까지 사랑하겠어, 널 사랑하는 거지", "artist": "악동뮤지션", "youtube_link": "https://youtu.be/mZz9uYdj_v4?si=Rvt35G7_uhvNBeQm"}
         ],
         '위로': [
             {"title": "not ok", "artist": "로꼬", "youtube_link": "https://youtu.be/yKp_hKVsiEsE?si=HtlyXg4S5_LQhLm8r"},
             {"title": "도망가자", "artist": "선우정아", "youtube_link": "https://youtu.be/D0l1HdemykU?si=AKHI0gf2LHkzsRVP"},
-            {"title": "나의 사춘기에게", "artist": "볼빨간사춘기", "youtube_link": "https://youtu.be/3gMAEZCOFtE?si=-gn4O5F9XtGXkzu0"},
-            {"title": "별을 세는 밤", "artist": "스탠딩 에그", "youtube_link": "https://youtu.be/y9_Yq-N-Nn0?si=p837p1vC_-q_vT0K"}
+            {"title": "나의 사춘기에게", "artist": "볼빨간사춘기", "youtube_link": "https://youtu.be/3gMAEZCOFtE?si=-gn4O5F9XtGXkzu0"}
         ],
         '사랑': [
             {"title": "선을 그어주던가", "artist": "1415", "youtube_link": "https://youtu.be/qky_GLtTy6I?si=McEIdth6cF6Fn2Cu"},
