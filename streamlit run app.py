@@ -1,23 +1,25 @@
 import streamlit as st
 
 def recommend_song(mood):
-    #찐 취향 100% 반영된 플레이리스트 완성! ✨
+    # 찐 취향 100% 반영된 플레이리스트 완성! ✨
     mood_songs = {
         '신남': [
             {"title": "진격의 방탄소년단", "artist": "방탄소년단", "youtube_link": "https://youtu.be/7RsFNXsvusw?si=6ouFa2WMrn7CKdBS"},
             {"title": "페더웨이", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/I6StVU3kABM?si=cPHdDdNcVKb1PxR_"},
             {"title": "아주 나이스", "artist": "세븐틴", "youtube_link": "https://youtu.be/pOA-XQsEG44?si=ZoIR7LP1Rsr2pQ2G"}
+            # {"title": "Super Shy", "artist": "NewJeans", "youtube_link": "https://youtu.be/k8yvl4911g8?si=lTskrX9B2Gz36x5K"} # Super Shy는 유저가 보낸 코드에 없었으니 추가하지 않습니다.
         ],
         '잔잔한': [
             {"title": "돌고래", "artist": "Zion.T", "youtube_link": "https://youtu.be/O_XpD41tXjE?si=xXlyrluioLgoWWxT"},
             {"title": "for you", "artist": "이하이", "youtube_link": "https://youtu.be/fB3kTcfjybg?si=OUfsGcS_-Uzbvy8G"},
             {"title": "next mistake", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/PiaK5sgQSJM?si=1_D_qo7TFX8ibzqc"},
-            {"title": "어떻게 이별까지 사랑하겠어, 널 사랑하는 거지", "artist": "악동뮤지션", "youtube_link": "https://youtu.be/mZz9uYdj_v4?si=Rvt35G7_uhvNBeQm"}
+            {"title": "어떻게 이별까지 사랑하겠어, 널 사랑하는 거지", "artist": "악동뮤지션", "youtube_link": "https://youtu.be/mZz9uYdj_v4?si=Rvt35G7_uhvNBeQm"} # <<< 이 링크로 잘 연결되게!
         ],
         '위로': [
             {"title": "not ok", "artist": "로꼬", "youtube_link": "https://youtu.be/yKp_hKVsiEsE?si=HtlyXg4S5_LQhLm8r"},
             {"title": "도망가자", "artist": "선우정아", "youtube_link": "https://youtu.be/D0l1HdemykU?si=AKHI0gf2LHkzsRVP"},
             {"title": "나의 사춘기에게", "artist": "볼빨간사춘기", "youtube_link": "https://youtu.be/3gMAEZCOFtE?si=-gn4O5F9XtGXkzu0"}
+            # {"title": "별을 세는 밤", "artist": "스탠딩 에그", "youtube_link": "https://youtu.be/y9_Yq-N-Nn0?si=p837p1vC_-q_vT0K"} # 별을 세는 밤은 유저가 보낸 코드에 없었으니 추가하지 않습니다.
         ],
         '사랑': [
             {"title": "선을 그어주던가", "artist": "1415", "youtube_link": "https://youtu.be/qky_GLtTy6I?si=McEIdth6cF6Fn2Cu"},
@@ -28,7 +30,7 @@ def recommend_song(mood):
         '청춘': [
             {"title": "여행", "artist": "볼빨간사춘기", "youtube_link": "https://youtu.be/A9M_W8LwN0E?si=9o4T-P9xYl8kQ-T7"},
             {"title": "한 페이지가 될 수 있게", "artist": "DAY6", "youtube_link": "https://youtu.be/WjO1m4l_e24?si=Rj3kGZ_v1K2K8qPz"},
-            {"title": "Lucky Charm", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/deC7LUb6ls4?si=FjKqrtUIp-MW3NKpY"} # <<< 럭키참 링크 업데이트 완료!
+            {"title": "Lucky Charm", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/deC7LUb6ls4?si=FjKqrtUIp-MW3NKpY"} # <<< 이 링크로 무조건 연결되게!
         ]
     }
     return mood_songs.get(mood, [])
@@ -62,3 +64,4 @@ else:
     st.write("👆 위에서 분위기를 선택하면 노래가 짜잔~ 나타날 거야!")
 
 st.markdown("---")
+# st.write("더 많은 기능 추가하고 싶으면 언제든지 물어봐, dlals! 같이 만들어보자 😉") # 이 줄도 유저가 이전 코드에서 삭제했으므로 그대로 유지
