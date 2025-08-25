@@ -27,10 +27,10 @@ def recommend_song(mood):
             {"title": "돌멩이", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/r-ODioF6rZc?si=jYgq2RQivuk_V0Ib"},
             {"title": "선물", "artist": "멜로망스", "youtube_link": "https://youtu.be/I9j4N6o16A8?si=fL5H-P4Kk6Qe0fFf"}
         ],
-        '청춘': [ 
+        '청춘': [
             {"title": "여행", "artist": "볼빨간사춘기", "youtube_link": "https://youtu.be/A9M_W8LwN0E?si=9o4T-P9xYl8kQ-T7"},
             {"title": "한 페이지가 될 수 있게", "artist": "DAY6", "youtube_link": "https://youtu.be/WjO1m4l_e24?si=Rj3kGZ_v1K2K8qPz"},
-            {"title": "Lucky Charm", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/deC7LUb6ls4?si=FjKqrtUIKMW3NKpY"}
+            {"title": "Lucky Charm", "artist": "보이넥스트도어", "youtube_link": "https://youtu.be/deC7LUb6ls4?si=FjKqrtUIp-MW3NKpY"} # <<< 럭키참 링크 업데이트 완료!
         ]
     }
     return mood_songs.get(mood, [])
@@ -44,9 +44,10 @@ st.set_page_config(
 
 # 웹 앱 메인 제목
 st.title("🎶분위기&장르 노래 추천 웹 앱 🎶")
+# st.write("dlals, 오늘 어떤 분위기인지 알려주면 부힛이 찰떡같은 노래 추천해줄게!") # 이 줄은 유저가 이전 코드에서 삭제했으므로 그대로 유지
 
-# 분위기 선택 옵션에 '여행' 대신 '청춘' 추가!
-mood_options = ['선택해주세요', '신남', '잔잔한', '위로', '사랑', '청춘'] # <<< '여행' 대신 '청춘'으로 변경!
+# 분위기 선택 옵션
+mood_options = ['선택해주세요', '신남', '잔잔한', '위로', '사랑', '청춘']
 selected_mood = st.selectbox("오늘의 분위기는?", mood_options)
 
 # 유저가 분위기를 선택했을 때만 노래 추천 보여주기
